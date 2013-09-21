@@ -1,0 +1,15 @@
+PLANS:
+	-Start on a spacestation orbiting a planet
+	-Crash into the planet with a pod
+	-Get resources
+	-Build rocket
+	-Explore space
+	-Upgrade rocket
+
+	-Randomly generated space stations / planets / asteroids / wrecks
+
+TODO:
+	-Universe creating / saving / loading
+	-Planet creating / saving / loading
+	-Spacestation creating / saving / loading
+	-New game / load game menu
