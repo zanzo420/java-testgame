@@ -6,6 +6,11 @@ PLANS:
 	-Explore space
 	-Upgrade rocket
 
+	-inventory system.	
+	-topdown space exploration mode.
+	-factions. faction relations.
+	-companions.
+
 	-Randomly generated space stations / planets / asteroids / wrecks
 
 TODO:
