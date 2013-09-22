@@ -1,6 +1,6 @@
 package mist2meat.javatestgame.gui;
 
-import mist2meat.javatestgame.main.Input;
+import mist2meat.javatestgame.input.Input;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;

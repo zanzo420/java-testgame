@@ -1,5 +1,6 @@
 package mist2meat.javatestgame.main;
 
+import mist2meat.javatestgame.input.Input;
 import mist2meat.javatestgame.states.GameState;
 import mist2meat.javatestgame.states.IntroGameState;
 

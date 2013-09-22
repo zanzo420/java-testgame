@@ -1,4 +1,4 @@
-package mist2meat.javatestgame.main;
+package mist2meat.javatestgame.input;
 
 import org.lwjgl.input.Mouse;
 
