@@ -12,8 +12,8 @@ public class MainGame extends BasicGame {
 
 	private static GameState currentGameState;
 
-	public MainGame(String title) {
-		super(title);
+	public MainGame() {
+		super("Untitled spacegame");
 
 		setGameState(new IntroGameState());
 	}
@@ -21,6 +21,8 @@ public class MainGame extends BasicGame {
 	@Override
 	public void init(GameContainer container) throws SlickException {
 		container.setShowFPS(true);
+
+		Input.setInput(container.getInput());
 	}
 
 	@Override

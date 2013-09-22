@@ -4,6 +4,16 @@ import org.lwjgl.input.Mouse;
 
 public class Input {
 
+	private static org.newdawn.slick.Input input;
+	
+	public static void setInput(org.newdawn.slick.Input i) {
+		input = i;
+	}
+	
+	public static org.newdawn.slick.Input getInput() {
+		return input;
+	}
+	
 	public static int getMouseX() {
 		return Mouse.getX();
 	}
