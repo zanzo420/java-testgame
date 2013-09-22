@@ -9,8 +9,6 @@ import org.newdawn.slick.SlickException;
 
 public class Button extends GuiElement {
 	
-	private String text;
-	
 	private Image curImage;
 	
 	private Image image;
@@ -21,10 +19,13 @@ public class Button extends GuiElement {
 	
 	private Runnable function;
 	
+	private Label label;
+	
 	public Button(int x, int y, int w, int h, String text, Runnable function) {
 		super(x,y,w,h);
 		
-		this.text = text;
+		label = new Label(x+w/2,y+h/2,text);
+		label.setCentered(true);
 		
 		try {
 			image = new Image("res/gfx/gui/button/button.png");
@@ -45,9 +46,7 @@ public class Button extends GuiElement {
 		
 		curImage.draw(getX(), getY(), getWidth(), getHeight());
 		
-		g.drawRect(getX(), getY(), getWidth(), getHeight());
-		
-		g.drawString(text, getX(), getY());
+		label.draw(g);
 	}
 	
 	@Override
