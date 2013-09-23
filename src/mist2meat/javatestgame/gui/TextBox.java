@@ -77,4 +77,8 @@ public class TextBox extends GuiElement {
 		return str;
 	}
 
+	public void clear() {
+		text.clear();
+	}
+
 }
