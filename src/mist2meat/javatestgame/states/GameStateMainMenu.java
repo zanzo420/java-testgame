@@ -4,6 +4,8 @@ import mist2meat.javatestgame.gui.Button;
 import mist2meat.javatestgame.gui.Gui;
 import mist2meat.javatestgame.gui.Label;
 import mist2meat.javatestgame.gui.TextBox;
+import mist2meat.javatestgame.gui.UniverseList;
+import mist2meat.javatestgame.universe.UniverseManager;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -53,6 +55,13 @@ public class GameStateMainMenu extends GameState {
 			}
 		}));
 		
+		final UniverseList universeList = new UniverseList(200,50,500,400);
+		playGui.addElement(universeList);
+		
+		Label l = new Label(450,20,"Existing universes");
+		l.setCentered(true);
+		playGui.addElement(l);
+		
 		//build create universe gui
 		createUniverseGui.addElement(new Label(10,100,"Create universe"));
 		createUniverseGui.addElement(new Label(10,130,"Name:"));
@@ -63,7 +72,10 @@ public class GameStateMainMenu extends GameState {
 		createUniverseGui.addElement(new Button(10,300,100,26,"Create",new Runnable() {
 			public void run() {
 				if(namebox.getText().length() > 0){
-					System.out.println("Creating universe: \""+namebox.getText()+"\"");
+					UniverseManager.createUniverse(namebox.getText());
+					universeList.refresh();
+					namebox.clear();
+					curGui = playGui;
 				}
 			}
 		}));
