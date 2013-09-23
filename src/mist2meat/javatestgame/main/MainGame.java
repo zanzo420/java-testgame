@@ -2,7 +2,7 @@ package mist2meat.javatestgame.main;
 
 import mist2meat.javatestgame.input.Input;
 import mist2meat.javatestgame.states.GameState;
-import mist2meat.javatestgame.states.IntroGameState;
+import mist2meat.javatestgame.states.GameStateNoiseTest;
 
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -16,12 +16,12 @@ public class MainGame extends BasicGame {
 	public MainGame() {
 		super("Untitled spacegame");
 
-		setGameState(new IntroGameState());
+		setGameState(new GameStateNoiseTest());
 	}
 
 	@Override
 	public void init(GameContainer container) throws SlickException {
-		container.setShowFPS(true);
+		container.setShowFPS(false);
 
 		Input.setInput(container.getInput());
 	}
