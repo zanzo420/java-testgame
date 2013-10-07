@@ -17,4 +17,9 @@ TODO:
 	-Universe creating / saving / loading
 	-Planet creating / saving / loading
 	-Spacestation creating / saving / loading
+	-Spaceship,landing bay tiles.
+	-wasd + qe movement.
+	-damage relevant to speed upon collision to docking bay during spaceflight.
+	-spacestation generator, 32x32 tiles.
+
 	-New game / load game menu
