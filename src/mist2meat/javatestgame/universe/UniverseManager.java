@@ -3,6 +3,9 @@ package mist2meat.javatestgame.universe;
 import java.io.File;
 import java.util.ArrayList;
 
+import mist2meat.javatestgame.main.MainGame;
+import mist2meat.javatestgame.states.GameStateStartGame;
+
 public class UniverseManager {
 
 	public static ArrayList<String> getUniverses() {
@@ -28,10 +31,13 @@ public class UniverseManager {
 			dir.mkdirs();
 		}
 		
-		//initialise file structure / generation
+		//TODO: initialize file structure / generation
+		
+		loadUniverse(name);
 	}
 
 	public static void loadUniverse(String name) {
 		System.out.println("Loading universe: "+name);
+		MainGame.setGameState(new GameStateStartGame());
 	}
 }
