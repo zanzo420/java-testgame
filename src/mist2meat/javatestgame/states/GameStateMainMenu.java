@@ -5,6 +5,7 @@ import mist2meat.javatestgame.gui.Gui;
 import mist2meat.javatestgame.gui.Label;
 import mist2meat.javatestgame.gui.TextBox;
 import mist2meat.javatestgame.gui.UniverseList;
+import mist2meat.javatestgame.main.MainGame;
 import mist2meat.javatestgame.universe.UniverseManager;
 
 import org.newdawn.slick.GameContainer;
@@ -12,9 +13,7 @@ import org.newdawn.slick.Graphics;
 
 public class GameStateMainMenu extends GameState {
 
-	private Gui curGui;
-	
-	private Gui mainGui,playGui,optionsGui,createUniverseGui;
+	private Gui curGui,mainGui,playGui,optionsGui,createUniverseGui,debugGui;
 	
 	@Override
 	public void init() {
@@ -22,6 +21,7 @@ public class GameStateMainMenu extends GameState {
 		playGui = new Gui();
 		createUniverseGui = new Gui();
 		optionsGui = new Gui();
+		debugGui = new Gui();
 		
 		//build main gui		
 		mainGui.addElement(new Button(10,100,100,26,"Play Game",new Runnable() {
@@ -36,7 +36,13 @@ public class GameStateMainMenu extends GameState {
 			}
 		}));
 		
-		mainGui.addElement(new Button(10,200,100,26,"Exit",new Runnable() {
+		mainGui.addElement(new Button(10,200,100,26,"Debug",new Runnable() {
+			public void run() {
+				curGui = debugGui;
+			}
+		}));
+		
+		mainGui.addElement(new Button(10,250,100,26,"Exit",new Runnable() {
 			public void run() {
 				System.exit(0);
 			}
@@ -88,6 +94,19 @@ public class GameStateMainMenu extends GameState {
 		
 		//build options gui
 		optionsGui.addElement(new Button(10,100,100,26,"Back",new Runnable() {
+			public void run() {
+				curGui = mainGui;
+			}
+		}));
+		
+		//build debug gui
+		debugGui.addElement(new Button(10,100,200,26,"Noise generator test",new Runnable() {
+			public void run() {
+				MainGame.setGameState(new DebugGameStateNoiseTest());
+			}
+		}));
+		
+		debugGui.addElement(new Button(10,550,100,26,"Back",new Runnable() {
 			public void run() {
 				curGui = mainGui;
 			}

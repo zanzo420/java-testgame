@@ -8,7 +8,7 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-public class GameStateNoiseTest extends GameState {
+public class DebugGameStateNoiseTest extends GameState {
 
 	private int x,y,width,height;
 	private float[][] noise;
@@ -43,9 +43,19 @@ public class GameStateNoiseTest extends GameState {
 		for(int x = 0; x < width; x++){
 			for(int y = 0; y < height; y++){
 				float noiseval = noise[x][y];
-				Color c = Color.white;
+				Color c = Color.black;
 				
-				c.a = noiseval;
+				if(noiseval < 0.5) {
+					c = Color.blue;
+				}else if(noiseval < 0.505) {
+					c = Color.yellow;
+				}else if(noiseval < 0.6) {
+					c = Color.green;
+				}else if(noiseval < 0.65) {
+					c = Color.gray;
+				}else if(noiseval < 0.8) {
+					c = Color.white;
+				}
 				
 				g.setColor(c);
 				g.fillRect(x,y,1,1);
