@@ -12,7 +12,7 @@ public class GameStateTutorial extends GameState {
 	
 	@Override
 	public void draw(GameContainer container, Graphics g) {
-		
+		g.drawString("*insert tutorial here*", 10, 100);
 	}
 	
 	@Override
