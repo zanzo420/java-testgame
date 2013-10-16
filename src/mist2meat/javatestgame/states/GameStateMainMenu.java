@@ -106,6 +106,12 @@ public class GameStateMainMenu extends GameState {
 			}
 		}));
 		
+		debugGui.addElement(new Button(10,150,200,26,"Ship movement test",new Runnable() {
+			public void run() {
+				MainGame.setGameState(new DebugGameStateShipMovement());
+			}
+		}));
+		
 		debugGui.addElement(new Button(10,550,100,26,"Back",new Runnable() {
 			public void run() {
 				curGui = mainGui;
