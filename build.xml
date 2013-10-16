@@ -1,4 +1,4 @@
-<project name="javaskipbo" default="build-game" basedir=".">
+<project name="java-testgame" default="build-game" basedir=".">
 	
 	<path id="classpath">
 		<fileset dir="lib" includes="*.jar"/>
