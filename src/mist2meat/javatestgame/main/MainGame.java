@@ -5,6 +5,7 @@ import mist2meat.javatestgame.states.GameState;
 import mist2meat.javatestgame.states.GameStateIntro;
 
 import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -28,6 +29,7 @@ public class MainGame extends BasicGame {
 
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException {
+		g.setColor(Color.white);
 		currentGameState.draw(container, g);
 	}
 
