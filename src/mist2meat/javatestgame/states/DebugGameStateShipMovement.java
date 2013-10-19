@@ -4,6 +4,7 @@ import mist2meat.javatestgame.object.PlayerShip;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.SlickException;
 
 public class DebugGameStateShipMovement extends GameState {
 
@@ -11,7 +12,12 @@ public class DebugGameStateShipMovement extends GameState {
 	
 	@Override
 	public void init() {
-		ship = new PlayerShip(256,256);
+		try {
+			ship = new PlayerShip(256,256);
+		} catch (SlickException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
