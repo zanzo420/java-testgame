@@ -4,6 +4,8 @@ import mist2meat.javatestgame.input.Input;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Vector2f;
 
 public class PlayerShip extends BaseObject {
@@ -11,12 +13,20 @@ public class PlayerShip extends BaseObject {
 	private float rotation, angvelocity;
 	private Vector2f position, velocity;
 
-	public PlayerShip(float x, float y) {
+	private float size = 128f;
+	private float enginesize = 32f;
+
+	private Image hull, engine;
+
+	public PlayerShip(float x, float y) throws SlickException {
 		velocity = new Vector2f(0, 0);
 		angvelocity = 0f;
 
 		position = new Vector2f(x, y);
 		rotation = 0f;
+
+		hull = new Image("res/gfx/objects/ship/hull.png");
+		engine = new Image("res/gfx/objects/ship/engine.png");
 	}
 
 	@Override
@@ -27,10 +37,12 @@ public class PlayerShip extends BaseObject {
 		g.rotate(position.x + 64, position.y + 64, rotation);
 
 		g.setColor(Color.white);
-		g.fillRect(position.x, position.y, 128, 128);
+		hull.draw(position.x, position.y, size, size);
 
-		g.setColor(Color.red);
-		g.fillRect(position.x + 108, position.y, 20, 128);
+		engine.draw(position.x, position.y);
+		engine.draw(position.x + size - enginesize, position.y);
+		engine.draw(position.x, position.y + size - enginesize);
+		engine.draw(position.x + size - enginesize, position.y + size - enginesize);
 
 		g.rotate(position.x + 64, position.y + 64, -rotation);
 	}
@@ -96,5 +108,7 @@ public class PlayerShip extends BaseObject {
 
 		velocity.scale(1f - movedecay);
 		angvelocity *= 1f - angdecay;
+		
+		engine.setRotation((float) (velocity.getTheta() - rotation));
 	}
 }
