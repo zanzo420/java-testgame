@@ -1,6 +1,7 @@
-package mist2meat.javatestgame.states;
+package mist2meat.javatestgame.states.debug;
 
 import mist2meat.javatestgame.object.PlayerShip;
+import mist2meat.javatestgame.states.GameState;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;

@@ -1,7 +1,8 @@
-package mist2meat.javatestgame.states;
+package mist2meat.javatestgame.states.debug;
 
 import mist2meat.javatestgame.input.Input;
 import mist2meat.javatestgame.noise.PerlinNoise;
+import mist2meat.javatestgame.states.GameState;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;

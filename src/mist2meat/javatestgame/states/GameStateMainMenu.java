@@ -6,6 +6,8 @@ import mist2meat.javatestgame.gui.Label;
 import mist2meat.javatestgame.gui.TextBox;
 import mist2meat.javatestgame.gui.UniverseList;
 import mist2meat.javatestgame.main.MainGame;
+import mist2meat.javatestgame.states.debug.DebugGameStateNoiseTest;
+import mist2meat.javatestgame.states.debug.DebugGameStateShipMovement;
 import mist2meat.javatestgame.universe.UniverseManager;
 
 import org.newdawn.slick.GameContainer;
