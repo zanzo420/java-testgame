@@ -28,12 +28,26 @@ public class PlayerShip extends BaseObject {
 		hull = new Image("res/gfx/objects/ship/hull.png");
 		engine = new Image("res/gfx/objects/ship/engine.png");
 	}
+	
+	public void setPosition(Vector2f pos) {
+		position = pos.sub(new Vector2f(64,64));
+	}
+	
+	public Vector2f getPosition() {
+		return position;
+	}
+	
+	public Vector2f getVelocity() {
+		return velocity.copy();
+	}
 
 	@Override
 	public void draw(Graphics g) {
-		g.drawString("R: " + rotation, 5, 10);
-		g.drawString("V: " + velocity.x + "," + velocity.y, 5, 25);
+		//g.drawString("R: " + rotation, 5, 10);
+		//g.drawString("V: " + velocity.x + "," + velocity.y, 5, 25);
 
+		g.pushTransform();
+		
 		g.rotate(position.x + 64, position.y + 64, rotation);
 
 		g.setColor(Color.white);
@@ -44,7 +58,7 @@ public class PlayerShip extends BaseObject {
 		engine.draw(position.x, position.y + size - enginesize);
 		engine.draw(position.x + size - enginesize, position.y + size - enginesize);
 
-		g.rotate(position.x + 64, position.y + 64, -rotation);
+		g.popTransform();
 	}
 
 	@Override
