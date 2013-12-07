@@ -1,3 +1,7 @@
+BUILD
+bin
+.idea
+.classpath
+.project
+*.iml
 *.class
-
-BUILD/**
