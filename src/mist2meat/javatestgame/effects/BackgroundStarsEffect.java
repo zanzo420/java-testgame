@@ -50,6 +50,7 @@ public class BackgroundStarsEffect extends BaseEffect {
 		
 		private Vector2f pos;
 		private int layer;
+		private float size;
 		
 		public Star(int layer) {
 			this.layer = layer;
@@ -57,6 +58,7 @@ public class BackgroundStarsEffect extends BaseEffect {
 			Vector2f vec = new Vector2f(1,0);
 			vec.setTheta(Math.random() * 360);
 			pos = Main.getScrCenter().add(vec.getNormal().scale((float) (-Math.random()*Main.scrw)));
+			size = Math.max((float) (Math.random() * 4f) / layer,0.2f);
 		}
 
 		public void update(Vector2f velocity) {
@@ -71,11 +73,12 @@ public class BackgroundStarsEffect extends BaseEffect {
 			Vector2f vel = velocity.copy();
 			vel.setTheta(vel.getTheta() + (Math.random()-0.5)*Main.scrw);
 			pos = Main.getScrCenter().add(vel.getNormal().scale(-Main.scrw));
+			size = Math.max((float) (Math.random() * 4f) / layer,0.2f);
 		}
 
 		public void draw(Graphics g) {
-			g.setColor(Color.white.scaleCopy(1f/layer));
-			g.drawRect(pos.x, pos.y, 1, 1);
+			g.setColor(Color.white.scaleCopy(1f/(layer/2)));
+			g.fillRect(pos.x, pos.y, size, size);
 		}
 		
 	}

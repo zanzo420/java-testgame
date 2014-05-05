@@ -13,7 +13,14 @@ public class Main {
 	private static Vector2f scrCenter;
 	
 	public static void main(String[] args) throws SlickException {
-		System.setProperty("org.lwjgl.librarypath", new File("lib/natives").getAbsolutePath());
+		String osname = "windows";
+		String os = System.getProperty("os.name");
+		
+		if(os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0){
+			osname = "linux";
+		}
+		
+		System.setProperty("org.lwjgl.librarypath", new File("lib/natives/"+osname).getAbsolutePath());
 		
 		scrCenter = new Vector2f(scrw/2,scrh/2);
 		

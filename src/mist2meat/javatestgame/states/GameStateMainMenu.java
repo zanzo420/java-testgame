@@ -8,6 +8,7 @@ import mist2meat.javatestgame.gui.UniverseList;
 import mist2meat.javatestgame.main.MainGame;
 import mist2meat.javatestgame.states.debug.DebugGameStateNoiseTest;
 import mist2meat.javatestgame.states.debug.DebugGameStateShipMovement;
+import mist2meat.javatestgame.states.debug.DebugGameStateTilemap;
 import mist2meat.javatestgame.universe.UniverseManager;
 
 import org.newdawn.slick.GameContainer;
@@ -111,6 +112,12 @@ public class GameStateMainMenu extends GameState {
 		debugGui.addElement(new Button(10,150,200,26,"Ship movement test",new Runnable() {
 			public void run() {
 				MainGame.setGameState(new DebugGameStateShipMovement());
+			}
+		}));
+		
+		debugGui.addElement(new Button(10,200,200,26,"Tilemap test",new Runnable() {
+			public void run() {
+				MainGame.setGameState(new DebugGameStateTilemap());
 			}
 		}));
 		
